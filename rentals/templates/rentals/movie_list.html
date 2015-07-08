@@ -1,19 +1,12 @@
-<!doctype html>
-<html>
-	<head>
-		<title>Redbox Simulatorino</title>
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	</head>
-	<body>
-		<div id=header>
-			<h1>List Of Movies:</h1>
-		</div>
-		{% for movie in movies%}
-			<div class=movie>
+{% extends "rentals/base.html" %}
+
+{% block content %}
+	{% for movie in movies%}
+		<div class=movie>
+			<a href='{% url "rentals.views.movie_detail" pk=movie.pk %}'>
 				<h2>{{ movie.title }}</h2>
-				<p>{{ movie.summary }}</p>
-			</div>
-		{% endfor %}
-	</body>
-</html>
+			</a> 
+			<p>{{ movie.summary }}</p>
+		</div>
+	{% endfor %}
+{% endblock content %}

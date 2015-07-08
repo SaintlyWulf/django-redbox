@@ -1,0 +1,19 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Redbox Simulatorino</title>
+		<link rel="stylesheet" href="{% static "css/rentals.css" %}">
+	</head>
+	<body>
+		<div id="header">
+			<h1>Redbox Simulatorino</h1>
+		</div>
+		<div id="topnav"></div>
+		<div id="sidenav"></div>
+		<div id="content-wrapper">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</body>
+</html>

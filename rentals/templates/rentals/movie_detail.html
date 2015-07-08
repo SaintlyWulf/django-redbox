@@ -1,0 +1,16 @@
+{% extends "rentals/base.html" %}
+
+{% block content %}
+	<div class="movie">
+		<h2>
+			{{ movie.title }} 
+			<span class="small">({{ movie.release_date|date:"Y" }})</span>
+		</h2>
+		<div id="summary">
+			<h3>Summary: </h3>
+			<p>{{ movie.summary }}</p>
+		</div>
+		<h3>Copies: </h3>{{ movie.copies }}
+		
+	</div>
+{% endblock content %}
